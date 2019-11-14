@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import './logger.js'
+import App from './app/App'
 
-const title = `Primo lo estoy haciendo`;
+const title = `Como un mago :p`;
 
 ReactDom.render(
-<div>{ title }</div>,
+<App title={ title} />,
 document.getElementById('app')
-)
+);
+
+module.hot.accept();

@@ -1,3 +1,5 @@
+const { HotModuleReplacementPlugin } = require('webpack');
+
 module.exports = {
     entry: `./src/index.js`,
     module: {
@@ -10,14 +12,17 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: [`*`, `.js`, `jsx`]
+        extensions: [`*`, `.js`, `.jsx`]
     },
     output: {
         path: `${ __dirname }/dist`,
         publicPath: `/`,
         filename: `bundle.js`
     },
+    plugins: [
+        new HotModuleReplacementPlugin()
+    ],
     devServer: {
-        contentBase: `./dist`
+        contentBase: `./dist`, hot: true
     }
 }
